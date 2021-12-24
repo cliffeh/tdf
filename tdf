@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import re
+import sys
+
+TODOS = ['TODO', 'XXX', 'FIX', 'FIXME', 'HACK', 'HAX+']
+TODOSTR = '(' + '|'.join(TODOS) + ')' + '\s+' + '(.*)'
+TODORE = re.compile(TODOSTR)
+
+for path in sys.argv[1:]:
+    with open(path, 'r') as f:
+        lineno = 1
+        for line in f:
+            m = re.search(TODORE, line)
+            if m:
+                print(f'* {m.group(2)} ({path}:{lineno})')
