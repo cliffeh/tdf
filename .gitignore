@@ -68,3 +68,6 @@ Makefile.in
 missing
 stamp-h1
 ylwrap
+
+# binaries
+tdf

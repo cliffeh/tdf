@@ -1,8 +1,8 @@
 AC_INIT([tdf], m4_esyscmd_s([cat VERSION]), [cliff.snyder@gmail.com])
 AM_INIT_AUTOMAKE([-Wall foreign])
-
-AC_PROG_YACC
 AC_PROG_CC
+
+AC_CHECK_HEADERS(stdio.h stdlib.h)
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([Makefile])
