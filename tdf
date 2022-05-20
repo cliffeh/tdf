@@ -13,5 +13,5 @@ for path in sys.argv[1:]:
         for line in f:
             m = re.search(TODORE, line)
             if m:
-                print(f'* {m.group(2)} ({path}:{lineno})')
+                print(f'* {m.group(2).strip()} ({path}:{lineno})')
             lineno += 1
